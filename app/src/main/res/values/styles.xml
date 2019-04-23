@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorTealBlue</item>
+    </style>
+
+    <style name="AppTitle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppFunctionTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:weekNumberColor">@color/colorAccent</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+</resources>

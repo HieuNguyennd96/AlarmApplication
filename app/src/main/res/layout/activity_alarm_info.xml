@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:custom="http://schemas.android.com/tools"
+        android:id="@+id/container">
+
+    <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_container"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/date_container">
+
+        <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:foreground="?selectableItemBackground"
+                android:background="@color/colorGrayBackGround"
+                android:id="@+id/btn_cancel"
+                android:text="@string/cancel1"
+                android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btn_save"
+                android:foreground="?selectableItemBackground"
+                android:background="@color/colorGrayBackGround"
+                android:text="@string/save"
+                android:layout_height="wrap_content"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/date_container"
+            app:layout_constraintTop_toBottomOf="@id/button_container"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view1">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_date"
+                android:textSize="16sp"
+                style="@style/AppFunctionTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/ic_date"
+                android:background="?selectableItemBackground"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_calendar"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date"
+                    android:textColor="@color/colorTealBlue"
+                    style="@style/AppFunctionTitle"/>
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.constraint.ConstraintLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:id="@+id/view1"
+          android:background="@color/colorGrayDisable"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          app:layout_constraintTop_toBottomOf="@id/date_container"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintBottom_toTopOf="@id/picker_container"/>
+
+    <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/picker_container"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/view1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hour_picker"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text"
+                android:text=":"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/hour_picker"
+                app:layout_constraintEnd_toStartOf="@id/minute_picker"/>
+
+        <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/minute_picker"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintStart_toEndOf="@id/text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:id="@+id/view2"
+          android:background="@color/colorGrayDisable"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          app:layout_constraintTop_toBottomOf="@id/picker_container"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintBottom_toTopOf="@id/scrollView"/>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/scrollView"
+            app:layout_constraintTop_toBottomOf="@id/view2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/repeat_container"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/view3">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/txtRepeat"
+                        style="@style/AppFunctionTitle"
+                        android:text="@string/repeat"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/repeat_picker"/>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/repeat_picker"
+                        android:orientation="horizontal"
+                        android:weightSum="7"
+                        app:layout_constraintTop_toBottomOf="@id/txtRepeat"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/sun"
+                            android:id="@+id/tv_sunday"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:textColor="@color/colorAccent"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/mon"
+                            android:id="@+id/tv_monday"
+                            android:gravity="center"
+                            android:textColor="@color/colorGray"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/tue"
+                            android:id="@+id/tv_tuesday"
+                            android:gravity="center"
+                            android:textColor="@color/colorGray"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/wed"
+                            android:id="@+id/tv_wednesday"
+                            android:gravity="center"
+                            android:textColor="@color/colorGray"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/thu"
+                            android:id="@+id/tv_thursday"
+                            android:gravity="center"
+                            android:textColor="@color/colorGray"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/fri"
+                            android:id="@+id/tv_friday"
+                            android:gravity="center"
+                            android:textColor="@color/colorGray"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/sat"
+                            android:id="@+id/tv_saturday"
+                            android:gravity="center"
+                            android:textColor="@color/colorGray"/>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+            </android.support.constraint.ConstraintLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:id="@+id/view3"
+                  android:background="@color/colorGrayDisable"
+                  app:layout_constraintTop_toBottomOf="@id/repeat_container"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintBottom_toTopOf="@id/name_container"/>
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/name_container"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    app:layout_constraintTop_toBottomOf="@id/view3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/view4">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/tv_name_title"
+                        style="@style/AppFunctionTitle"
+                        android:text="@string/alarm_name"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tv_alarm_name"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTealBlue"
+                        android:id="@+id/tv_alarm_name"
+                        android:text="@string/alarm_name"
+                        style="@style/AppFunctionTitle"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name_title"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:id="@+id/view4"
+                  android:background="@color/colorGrayDisable"
+                  app:layout_constraintTop_toBottomOf="@id/name_container"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintBottom_toTopOf="@id/snooze_container"/>
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/snooze_container"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    app:layout_constraintTop_toBottomOf="@id/view4"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/view5">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/tv_snooze_title"
+                        style="@style/AppFunctionTitle"
+                        android:text="@string/snooze"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tv_snooze_name"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTealBlue"
+                        android:id="@+id/tv_snooze_name"
+                        android:text="@string/snooze"
+                        style="@style/AppFunctionTitle"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_snooze_title"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <android.support.v7.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/snooze_switch"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/iv_switch"
+                        android:background="@null"
+                        android:thumb="@null"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:id="@+id/view5"
+                  android:background="@color/colorGrayDisable"
+                  app:layout_constraintTop_toBottomOf="@id/snooze_container"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintBottom_toTopOf="@id/sound_container"/>
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sound_container"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    app:layout_constraintTop_toBottomOf="@id/view5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/view6">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/tv_sound_title"
+                        style="@style/AppFunctionTitle"
+                        android:text="@string/alarm_sound"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tv_sound_name"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTealBlue"
+                        android:id="@+id/tv_sound_name"
+                        android:text="@string/alarm_sound"
+                        style="@style/AppFunctionTitle"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sound_title"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <android.support.v7.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sound_switch"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/iv_switch"
+                        android:background="@null"
+                        android:thumb="@null"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:id="@+id/view6"
+                  android:background="@color/colorGrayDisable"
+                  app:layout_constraintTop_toBottomOf="@id/sound_container"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintBottom_toTopOf="@id/vibration_container"/>
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vibration_container"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/view6"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/tv_vibration_title"
+                        style="@style/AppFunctionTitle"
+                        android:text="@string/vibration"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tv_vibration_name"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTealBlue"
+                        android:id="@+id/tv_vibration_name"
+                        android:text="@string/alarm_sound"
+                        style="@style/AppFunctionTitle"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_vibration_title"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <android.support.v7.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/vibration_switch"
+                        android:layout_margin="10dp"
+                        android:button="@drawable/iv_switch"
+                        android:background="@null"
+                        android:thumb="@null"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <include layout="@layout/dialog_alarm_name"
+             android:id="@+id/dialog_name"
+             android:layout_margin="30dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:visibility="gone"
+             android:focusable="true"
+             android:clickable="true"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include layout="@layout/fragment_date_picker"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/calendar_container"
+             android:visibility="gone"
+             android:focusable="true"
+             android:clickable="true"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

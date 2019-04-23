@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clock</string>
+    <string name="alarm_title">Alarm</string>
+    <string name="worldclock_title">World Clock</string>
+    <string name="stopwatch_title">Stop watch</string>
+    <string name="timer_title">Timer</string>
+
+
+    <string name="delete">Delete</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="about_clock">About Clock</string>
+    <string name="cancel1">Cancel</string>
+    <string name="cancel2">Cancel</string>
+    <string name="date">  Date</string>
+    <string name="repeat">Repeat</string>
+    <string name="alarm_name">Alarm name</string>
+    <string name="snooze">Snooze</string>
+    <string name="alarm_sound">Alarm sound</string>
+    <string name="vibration">Vibration</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+    <string name="ok">OK</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="add">Add</string>
+    <string name="all">All</string>
+    <string name="save">Save</string>
+    <string name="mon">M</string>
+    <string name="tue">T</string>
+    <string name="wed">W</string>
+    <string name="thu">T</string>
+    <string name="fri">F</string>
+    <string name="sat">S</string>
+    <string name="sun">S</string>
+    <string name="none">None</string>
+    <string name="mute">Mute</string>
+    <string name="date_format">EEE, MMM dd</string>
+    <string name="every_day">Every day</string>
+    <string name="select_alarms">Select Alarms</string>
+    <string name="interval">Interval</string>
+    <string name="minutes">minutes</string>
+    <string name="times">times</string>
+    <string name="continuously">Continuously</string>
+    <string name="time_left">Time left</string>
+    <string name="second">second</string>
+    <string name="hour">hour</string>
+</resources>

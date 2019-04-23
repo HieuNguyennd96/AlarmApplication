@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notification_container"
+        android:keepScreenOn="true"
+        android:layout_gravity="top|start">
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/tv_alarm_name"
+              android:textSize="16sp"
+              android:layout_margin="8dp"
+              android:visibility="gone"
+              android:singleLine="true"
+              android:layout_alignParentStart="true"
+              android:layout_alignParentTop="true"
+              android:textColor="@color/colorBlack"
+              style="@style/TextAppearance.Compat.Notification.Title"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/tv_time"
+              android:textSize="16sp"
+              android:layout_margin="8dp"
+              android:layout_toEndOf="@id/tv_alarm_name"
+              android:layout_alignBaseline="@id/tv_alarm_name"
+              android:textColor="@color/colorBlack"
+              style="@style/TextAppearance.Compat.Notification.Title"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/tv_snooze"
+                  android:text="@string/snooze"
+                  android:textSize="12sp"
+                  android:textColor="@color/colorTealBlue"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginEnd="10dp"
+                  android:layout_below="@id/tv_time"
+                  android:layout_toStartOf="@id/tv_cancel"
+                  style="@style/TextAppearance.Compat.Notification.Info"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/tv_cancel"
+                  android:text="@string/cancel2"
+                  android:textSize="12sp"
+                  android:layout_below="@id/tv_time"
+                  android:layout_alignParentEnd="true"
+                  android:textColor="@color/colorTealBlue"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginEnd="10dp"
+                  style="@style/TextAppearance.Compat.Notification.Info"/>
+</RelativeLayout>
